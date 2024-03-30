@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/windowbar/close.svg</file>
+        <file>resources/windowbar/fullscreen.svg</file>
+        <file>resources/windowbar/maximize.svg</file>
+        <file>resources/windowbar/minimize.svg</file>
+        <file>resources/windowbar/more-line.svg</file>
+        <file>resources/windowbar/restore.svg</file>
+        <file>resources/windowbar/app/network.ico</file>
+        <file>resources/windowbar/app/network.png</file>
+        <file>resources/theme/dark-style.qss</file>
+        <file>resources/theme/light-style.qss</file>
+    </qresource>
+</RCC>

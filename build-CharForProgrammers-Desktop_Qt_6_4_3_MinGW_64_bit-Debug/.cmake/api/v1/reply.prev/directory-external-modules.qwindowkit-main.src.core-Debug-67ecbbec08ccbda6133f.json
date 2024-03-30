@@ -1,0 +1,87 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"qwk_add_library",
+			"qm_sync_include"
+		],
+		"files" : 
+		[
+			"external-modules/qwindowkit-main/src/CMakeLists.txt",
+			"external-modules/qwindowkit-main/src/core/CMakeLists.txt",
+			"build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/_install/lib/cmake/qmsetup/cmake/modules/Preprocess.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 88,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 101,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 119,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 110,
+				"parent" : 3
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"isOptional" : true,
+			"paths" : 
+			[
+				"out-amd64-Debug/lib/libQWKCore.dll.a"
+			],
+			"targetId" : "QWKCore::@16af0de41ec3b25906b9",
+			"targetIndex" : 3,
+			"targetIsImportLibrary" : true,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"isOptional" : true,
+			"paths" : 
+			[
+				"out-amd64-Debug/bin/QWKCore.dll"
+			],
+			"targetId" : "QWKCore::@16af0de41ec3b25906b9",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"type" : "code"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "external-modules/qwindowkit-main/src/core",
+		"source" : "external-modules/qwindowkit-main/src/core"
+	}
+}
