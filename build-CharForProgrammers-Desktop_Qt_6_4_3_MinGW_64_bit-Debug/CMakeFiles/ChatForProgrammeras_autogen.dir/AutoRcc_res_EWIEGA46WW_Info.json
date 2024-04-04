@@ -13,10 +13,12 @@
 		"F:/MyProject/CharForProgrammers/resources/windowbar/fullscreen.svg",
 		"F:/MyProject/CharForProgrammers/resources/windowbar/minimize.svg",
 		"F:/MyProject/CharForProgrammers/resources/windowbar/restore.svg",
-		"F:/MyProject/CharForProgrammers/resources/windowbar/app/network.ico",
-		"F:/MyProject/CharForProgrammers/resources/windowbar/app/network.png",
-		"F:/MyProject/CharForProgrammers/resources/theme/dark-style.qss",
-		"F:/MyProject/CharForProgrammers/resources/theme/light-style.qss"
+		"F:/MyProject/CharForProgrammers/resources/windowbar/app/chat.png",
+		"F:/MyProject/CharForProgrammers/resources/windowbar/app/chat.ico",
+		"F:/MyProject/CharForProgrammers/resources/theme/Login/dark-style.qss",
+		"F:/MyProject/CharForProgrammers/resources/theme/Login/light-style.qss",
+		"F:/MyProject/CharForProgrammers/resources/theme/Widget/dark-style.qss",
+		"F:/MyProject/CharForProgrammers/resources/theme/Widget/light-style.qss"
 	],
 	"LOCK_FILE" : "F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/CMakeFiles/ChatForProgrammeras_autogen.dir/AutoRcc_res_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

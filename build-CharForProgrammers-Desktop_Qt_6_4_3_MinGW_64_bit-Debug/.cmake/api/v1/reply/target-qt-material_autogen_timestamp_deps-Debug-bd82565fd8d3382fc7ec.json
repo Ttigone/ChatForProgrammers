@@ -1,0 +1,58 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"lib/qt-material/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "qt-material_autogen_timestamp_deps::@4f1c84940c58fcc9063f",
+	"isGeneratorProvided" : true,
+	"name" : "qt-material_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "lib/qt-material",
+		"source" : "lib/qt-material"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/lib/qt-material/CMakeFiles/qt-material_autogen_timestamp_deps",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/lib/qt-material/CMakeFiles/qt-material_autogen_timestamp_deps.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

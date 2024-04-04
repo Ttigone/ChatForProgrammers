@@ -283,9 +283,15 @@
 	"HEADERS" : 
 	[
 		[
-			"F:/MyProject/CharForProgrammers/widget.h",
+			"F:/MyProject/CharForProgrammers/src/App.h",
 			"MU",
-			"EWIEGA46WW/moc_widget.cpp",
+			"UVLADIE3JM/moc_App.cpp",
+			null
+		],
+		[
+			"F:/MyProject/CharForProgrammers/src/LoginPage/LoginDialog.h",
+			"MU",
+			"3T5WAEFJU2/moc_LoginDialog.cpp",
 			null
 		]
 	],
@@ -317,8 +323,11 @@
 	[
 		"F:/MyProject/CharForProgrammers/external-modules",
 		"F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/external-modules/qwindowkit-main/include",
-		"F:/MyProject/CharForProgrammers/WidgetFrame",
-		"F:/MyProject/CharForProgrammers",
+		"F:/MyProject/CharForProgrammers/lib/WidgetFrame",
+		"F:/MyProject/CharForProgrammers/lib",
+		"F:/MyProject/CharForProgrammers/lib/qt-material/componets/*.h",
+		"F:/MyProject/CharForProgrammers/lib/qt-material/componets/lib/.*h",
+		"F:/MyProject/CharForProgrammers/lib/qt-material/componets/layouts/*.h",
 		"D:/qt/qt6/6.4.3/mingw_64/include/QtCore",
 		"D:/qt/qt6/6.4.3/mingw_64/include",
 		"D:/qt/qt6/6.4.3/mingw_64/mkspecs/win32-g++",
@@ -363,8 +372,13 @@
 	"SETTINGS_FILE" : "F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/CMakeFiles/ChatForProgrammeras_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "F:/MyProject/CharForProgrammers/main.cpp", "MU", null ],
-		[ "F:/MyProject/CharForProgrammers/widget.cpp", "MU", null ]
+		[ "F:/MyProject/CharForProgrammers/src/App.cpp", "MU", null ],
+		[
+			"F:/MyProject/CharForProgrammers/src/LoginPage/LoginDialog.cpp",
+			"MU",
+			null
+		],
+		[ "F:/MyProject/CharForProgrammers/src/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

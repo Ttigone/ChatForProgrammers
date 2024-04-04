@@ -51,7 +51,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/external-modules/qt-easy-logger-main/cmake_install.cmake")
   include("F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/external-modules/qwindowkit-main/cmake_install.cmake")
-  include("F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/WidgetFrame/cmake_install.cmake")
+  include("F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/lib/WidgetFrame/cmake_install.cmake")
+  include("F:/MyProject/CharForProgrammers/build-CharForProgrammers-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/lib/qt-material/cmake_install.cmake")
 
 endif()
 

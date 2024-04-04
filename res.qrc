@@ -6,9 +6,11 @@
         <file>resources/windowbar/minimize.svg</file>
         <file>resources/windowbar/more-line.svg</file>
         <file>resources/windowbar/restore.svg</file>
-        <file>resources/windowbar/app/network.ico</file>
-        <file>resources/windowbar/app/network.png</file>
-        <file>resources/theme/dark-style.qss</file>
-        <file>resources/theme/light-style.qss</file>
+        <file>resources/windowbar/app/chat.ico</file>
+        <file>resources/windowbar/app/chat.png</file>
+        <file>resources/theme/Login/dark-style.qss</file>
+        <file>resources/theme/Login/light-style.qss</file>
+        <file>resources/theme/Widget/dark-style.qss</file>
+        <file>resources/theme/Widget/light-style.qss</file>
     </qresource>
 </RCC>

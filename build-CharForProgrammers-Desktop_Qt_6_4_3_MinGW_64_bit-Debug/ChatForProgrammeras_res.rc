@@ -3,4 +3,4 @@
 #define _STRINGIFY(x) #x
 #define STRINGIFY(x) _STRINGIFY(x)
 
- IDI_ICON1               ICON    DISCARDABLE     STRINGIFY(F:/MyProject/CharForProgrammers/resources/windowbar/app/network.ico)
+ IDI_ICON1               ICON    DISCARDABLE     STRINGIFY(F:/MyProject/CharForProgrammers/resources/windowbar/app/chat.ico)

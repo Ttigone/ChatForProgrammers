@@ -4,9 +4,10 @@ project(ChatForProgrammeras VERSION 0.1 LANGUAGES CXX)
 
 # ----------------------------------------------------------------
 # Build Options
-option(BUILD_WIDGETFRAME "build WidgetFrame" ON)
+option(BUILD_WIDGETFRAME "WidgetFrame" ON)
 option(BUILD_QWINDOWKIT-MAIN "WindowKit" ON)
 option(BUILD_DEBUG_MODEL "extra debug module message" ON)
+option(BUILD_QT-MATERIAL-WIDGETS "qt-material-widgets" ON)
 
 # ----------------------------------------------------------------
 # Setting variables
@@ -19,9 +20,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROJECT_SOURCES
-        main.cpp
-        widget.cpp
-        widget.h
+        ../src/main.cpp
+        ../src/App.cpp
+        ../src/App.h
         # only can change .exe's icon
         # ./resources/windowbar/app/ico.rc
 )
@@ -39,6 +40,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         res.qrc
+        src/LoginPage/LoginDialog.h src/LoginPage/LoginDialog.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QNet APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -76,7 +78,10 @@ if (BUILD_QWINDOWKIT-MAIN)
     add_subdirectory(./external-modules/qwindowkit-main)
 endif()
 if (BUILD_WIDGETFRAME)
-    add_subdirectory(WidgetFrame)
+    add_subdirectory(./lib/WidgetFrame)
+endif()
+if (BUILD_QT-MATERIAL-WIDGETS)
+    add_subdirectory(./lib/qt-material)
 endif()
 
 
@@ -93,6 +98,11 @@ endif()
 if (BUILD_WIDGETFRAME)
     target_link_libraries(${PROJECT_NAME} PRIVATE WidgetFrame)
 endif()
+if (BUILD_QT-MATERIAL-WIDGETS)
+    target_link_libraries(${PROJECT_NAME} PRIVATE qt-material)
+endif()
+
+
 
 
 # ----------------------------------------------------------------
@@ -106,7 +116,7 @@ function(add_win_rc _target)
     set(RC_COPYRIGHT ${_target})
     set(RC_APPLICATION_NAME ${_target})
 
-    get_filename_component(RC_ICON_PATH "${CMAKE_CURRENT_SOURCE_DIR}/resources/windowbar/app/network.ico" ABSOLUTE)
+    get_filename_component(RC_ICON_PATH "${CMAKE_CURRENT_SOURCE_DIR}/resources/windowbar/app/chat.ico" ABSOLUTE)
 
 
     set(_out_path "${CMAKE_CURRENT_BINARY_DIR}/${_target}_res.rc")
