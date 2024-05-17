@@ -2,10 +2,12 @@
 #include <QFile>
 #include <unistd.h>
 
+#include <windows.h>
+
 LoginDialog::LoginDialog(QWidget *parent)
     : QWidget{parent}
 {
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMaximizeButtonHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setFixedSize(420, 590);
     init();
     loadStyleSheet(Theme1::Dark);
@@ -47,12 +49,15 @@ void LoginDialog::init() {
     // m_layout->setMenuBar(m_titleBar);
     m_usrLineEdit = new QtMaterialTextField();
     m_usrLineEdit->setMaximumWidth(400);
+    m_usrLineEdit->setPlaceholderText(tr("账号"));
+
     m_pwdLineEdit = new QtMaterialTextField();
     m_pwdLineEdit->setMaximumWidth(400);
+    m_pwdLineEdit->setPlaceholderText(tr("密码"));
 
 
     m_imgLabel = new QLabel();
-    m_imgLabel->setPixmap(QPixmap::fromImage(QImage(":/resources/windowbar/app/chat.png")).scaled(100, 100));
+    m_imgLabel->setPixmap(QPixmap::fromImage(QImage(":/resources/Icon/windowbar/app/chat.png")).scaled(100, 100));
     m_imgLabel->setMaximumSize(100, 100);
 
     m_loginBtn = new QtMaterialRaisedButton(tr("登录"));
@@ -164,6 +169,10 @@ void LoginDialog::mousePressEvent(QMouseEvent *event) {
     m_clickPx = m_globalPx - m_delPx;
     m_clickPy = m_globalPy - m_delPy;
 
+    if (event->button() == Qt::LeftButton) {
+        ReleaseCapture();
+        SendMessage(HWND(winId()), WM_NCLBUTTONDOWN, HTCAPTION, 0);
+    }
     // 开启移动事件
     event->accept();
 }

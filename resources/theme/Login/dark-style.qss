@@ -1,5 +1,5 @@
 QPushButton#Login-icon-button {
-    icon: url(":/resources/windowbar/app/chat.png");
+    icon: url(":/resources/Icon/windowbar/app/chat.png");
     min-width: 40px;
     border: none;
     padding: 0;
@@ -11,7 +11,7 @@ QPushButton#Login-min-button {
     border: none;
     padding: 0;
     background-color: #ffc661;
-    icon: url(":/resources/windowbar/minimize.svg");
+    icon: url(":/resources/Icon/windowbar/minimize.svg");
 }
 
 QPushButton#Login-min-button:hover,
@@ -24,7 +24,7 @@ QPushButton#Login-close-button {
     border: none;
     padding: 0;
     background-color: #ffc661;
-    icon: url(":/resources/windowbar/close.svg");
+    icon: url(":/resources/Icon/windowbar/close.svg");
 }
 
 QPushButton#Login-close-button:hover,

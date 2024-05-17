@@ -10,8 +10,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QLineEdit>
-#include "../lib/qt-material/components/qtmaterialtextfield.h"
-#include "../lib/qt-material/components/qtmaterialraisedbutton.h"
+#include "qt-material/components/qtmaterialtextfield.h"
+#include "qt-material/components/qtmaterialraisedbutton.h"
 
 class LoginDialog : public QWidget
 {

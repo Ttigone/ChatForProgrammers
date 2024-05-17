@@ -1,16 +1,33 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/windowbar/close.svg</file>
-        <file>resources/windowbar/fullscreen.svg</file>
-        <file>resources/windowbar/maximize.svg</file>
-        <file>resources/windowbar/minimize.svg</file>
-        <file>resources/windowbar/more-line.svg</file>
-        <file>resources/windowbar/restore.svg</file>
-        <file>resources/windowbar/app/chat.ico</file>
-        <file>resources/windowbar/app/chat.png</file>
         <file>resources/theme/Login/dark-style.qss</file>
         <file>resources/theme/Login/light-style.qss</file>
         <file>resources/theme/Widget/dark-style.qss</file>
         <file>resources/theme/Widget/light-style.qss</file>
+        <file>resources/Icon/windowbar/app/chat.ico</file>
+        <file>resources/Icon/windowbar/app/chat.png</file>
+        <file>resources/Icon/windowbar/close.svg</file>
+        <file>resources/Icon/windowbar/fullscreen.svg</file>
+        <file>resources/Icon/windowbar/maximize.svg</file>
+        <file>resources/Icon/windowbar/minimize.svg</file>
+        <file>resources/Icon/windowbar/more-line.svg</file>
+        <file>resources/Icon/windowbar/restore.svg</file>
+        <file>resources/Icon/sys/interface/chat-fill.svg</file>
+        <file>resources/Icon/sys/interface/chat.svg</file>
+        <file>resources/Icon/sys/interface/friend-fill.svg</file>
+        <file>resources/Icon/sys/interface/friend.svg</file>
+        <file>resources/Icon/sys/interface/setting.svg</file>
+        <file>resources/Icon/sys/interface/store-fill.svg</file>
+        <file>resources/Icon/sys/interface/store.svg</file>
+        <file>resources/Icon/sys/interface/usrPic.jpg</file>
+        <file>resources/Icon/sys/tool/file_transfer.svg</file>
+        <file>resources/Icon/sys/tool/chat-history.svg</file>
+        <file>resources/Icon/sys/tool/expression.svg</file>
+        <file>resources/Icon/sys/tool/screenshot.svg</file>
+        <file>resources/Icon/sys/tool/chat-history-clicked.svg</file>
+        <file>resources/Icon/sys/tool/expression-clicked.svg</file>
+        <file>resources/Icon/sys/tool/folder-clicked.svg</file>
+        <file>resources/Icon/sys/tool/screenshot-clicked.svg</file>
+        <file>resources/Icon/sys/tool/folder.svg</file>
     </qresource>
 </RCC>
