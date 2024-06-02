@@ -7,6 +7,7 @@ set(CMAKE_AUTORCC ON)
 
 set(INCLUDE_DIRS
     unit.h
+    Utils.h
 )
 
 set(SRC_DIRS

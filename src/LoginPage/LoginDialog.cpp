@@ -1,6 +1,7 @@
 #include "LoginDialog.h"
 #include <QFile>
-#include <unistd.h>
+// #include <unistd.h>
+#include <ComApi/unit.h>
 
 #include <windows.h>
 

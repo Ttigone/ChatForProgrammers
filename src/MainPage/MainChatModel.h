@@ -18,6 +18,12 @@ protected:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
+public:
+    void updateModel(const QModelIndex &index, const QDateTime &time);
+
+signals:
+    // void item
+
 private:
     void init();
 

@@ -10,6 +10,7 @@ set(INCLUDE_DIRS
     FileWidget.h
     TextWidget.h
     PictureWidget.h
+    TimeWidget.h
     Bubble/BubbleInfo.h
     Bubble/BubbleItem.h
 )
@@ -18,6 +19,7 @@ set(SRC_DIRS
     FileWidget.cpp
     TextWidget.cpp
     PictureWidget.cpp
+    TimeWidget.cpp
     Bubble/BubbleInfo.cpp
     Bubble/BubbleItem.cpp
 )

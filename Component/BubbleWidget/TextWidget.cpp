@@ -8,11 +8,9 @@
 
 TextWidget::TextWidget(const BubbleInfo *info, QWidget *parent)
 {
-    // qDebug() << "COm";
     m_layout = new QHBoxLayout(this);
     m_layout->setContentsMargins(QMargins());
     QTextEdit *m_textEdit = new QTextEdit(this);
-    // qDebug() << "saaa";
     // 根据不同的发送方, 决定布局靠做还是靠右
     switch (info->getSender()) {
         case MsgSender::Client: {
@@ -85,14 +83,6 @@ TextWidget::TextWidget(const BubbleInfo *info, QWidget *parent)
     m_layout->addWidget(m_textEdit, 0, Qt::AlignTop);
     m_layout->addWidget(m_labelBtn, 0, Qt::AlignTop);
     m_layout->addSpacerItem(new QSpacerItem(15, 1));
-
-
-
-
-
-
-
-
 }
 
 Qt::Orientation TextWidget::getOrientation()

@@ -2,9 +2,12 @@
 #include "CellData.h"
 #include "MainPage/MainMsgWidget.h"
 
+#include <QDateTime>
 #include <QListView>
 #include <QStackedLayout>
-#include <unordered_map>>
+#include <unordered_map>
+
+#include <MainPage/MainChatModel.h>
 
 MiddleWare &MiddleWare::instance()
 {
@@ -25,36 +28,29 @@ void MiddleWare::installListenerService(QListView *view, QStackedLayout *layout)
 {
     connect(view, &QListView::clicked, [view, layout, this](const QModelIndex &index) {
         if (index.isValid()) {
-            // if (index != view->currentIndex()) {
-                qDebug() << "cl";
-                // 切换
-                CellData q = qvariant_cast<CellData>(view->model()->data(index, Qt::UserRole));
-                // qDebug() << "id" << q.m_id;
-                // qDebug() << "name" << q.m_name;
-                // map[q.m_id] = 1;
-                // if (map.empty()) {
+            // 切换
+            CellData q = qvariant_cast<CellData>(view->model()->data(index, Qt::UserRole));
+            if (map.find(q.m_id) == map.end()) {
+                map[q.m_id] = onlineUser();
+            }
+            if (!layout->itemAt(map[q.m_id])) {
+                auto i = new MainMsgWidget(q);
 
-                // }
-                // map[q.m_id] = 0;
-                if (map.find(q.m_id) == map.end()) {
-                    map[q.m_id] = onlineUser();
-                }
-                if (!layout->itemAt(map[q.m_id])) {
-                    // qDebug() << "id: " << q.m_id;
-                    // qDebug() << "c";
-                    // map[q.m_id] = 0;
-                    layout->insertWidget(map[q.m_id], new MainMsgWidget(q));
-                    // layout->insertWidget(q.m_id, new MainMsgWidget(q));
-                    // layout->setCurrentIndex(q.m_id);
-                    layout->setCurrentIndex(map[q.m_id]);
-                } else {
-                    // qDebug() << "t";
-                    layout->setCurrentIndex(map[q.m_id]);
-                }
+                // qDebug() << "sss: index : " << index.row();
+                connect(i, &MainMsgWidget::updateTimeStamp, [view, index](const QDateTime &time) {
+                    // view->model();
+                    // (MainChatModel)view->model();
+                    MainChatModel *model = qobject_cast<MainChatModel *>(view->model());
+                    model->updateModel(index, time);
+                });
 
-            // } else {
-
-            // }
+                layout->insertWidget(map[q.m_id], i);
+                // layout->insertWidget(q.m_id, new MainMsgWidget(q));
+                // layout->setCurrentIndex(q.m_id);
+                layout->setCurrentIndex(map[q.m_id]);
+            } else {
+                layout->setCurrentIndex(map[q.m_id]);
+            }
         }
     });
 }

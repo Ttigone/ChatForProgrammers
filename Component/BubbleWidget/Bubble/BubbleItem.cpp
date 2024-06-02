@@ -1,6 +1,7 @@
 #include "BubbleItem.h"
 
 #include "../TextWidget.h"
+#include "../TimeWidget.h"
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -54,5 +55,16 @@ BubbleItem::BubbleItem(std::string msg, MsgSender sender, MsgType type, QWidget 
         m_layout->addStretch();
         m_layout->addWidget(m_item);
     }
+    this->setLayout(m_layout);
+}
+
+BubbleItem::BubbleItem(const QDateTime &time, QWidget *parent)
+    : BubbleItem(parent)
+{
+    // m_item
+    m_item = new TimeWidget(time, this);
+    m_layout->addStretch();
+    m_layout->addWidget(m_item);
+    m_layout->addStretch();
     this->setLayout(m_layout);
 }

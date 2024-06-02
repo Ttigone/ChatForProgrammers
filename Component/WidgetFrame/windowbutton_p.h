@@ -5,23 +5,23 @@
 
 namespace Ttigone {
 
-    class WindowButtonPrivate {
-        Q_DECLARE_PUBLIC(WindowButton)
+class WindowButtonPrivate {
+    Q_DECLARE_PUBLIC(WindowButton)
 
-    public:
-        WindowButtonPrivate();
-        virtual ~WindowButtonPrivate();
+public:
+    WindowButtonPrivate();
+    virtual ~WindowButtonPrivate();
 
-        void init();
+    void init();
 
-        WindowButton *q_ptr;
+    WindowButton *q_ptr;
 
-        QIcon iconNormal;
-        QIcon iconChecked;
-        QIcon iconDisabled;
+    QIcon iconNormal;
+    QIcon iconChecked;
+    QIcon iconDisabled;
 
-        void reloadIcon();
-    };
+    void reloadIcon();
+};
 
 
 }

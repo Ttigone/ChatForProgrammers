@@ -22,10 +22,9 @@ set(LIBRARY_SOURCES
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-add_library(qt-easy-logger SHARED
-    ${LIBRARY_SOURCES}
-)
+add_library(qt-easy-logger SHARED)
 
+target_sources(${PROJECT_NAME} PRIVATE ${LIBRARY_SOURCE})
 
 target_link_libraries(qt-easy-logger PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

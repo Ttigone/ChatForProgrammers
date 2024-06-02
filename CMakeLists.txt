@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ChatForProgrammeras VERSION 0.1 LANGUAGES CXX)
+project(ChatForProgrammers VERSION 0.1 LANGUAGES CXX)
 
 # ----------------------------------------------------------------
 # Build Options
 option(BUILD_WIDGETFRAME "WidgetFrame" ON)
 option(BUILD_QWINDOWKIT-MAIN "WindowKit" ON)
-option(BUILD_DEBUG_MODEL "extra debug module message" ON)
+option(BUILD_DEBUG_MODEL "extra debug module message" OFF)
 option(BUILD_QT-MATERIAL-WIDGETS "qt-material-widgets" ON)
 
 # ----------------------------------------------------------------
@@ -84,6 +84,8 @@ include_directories(${PROJECT_SOURCE_DIR}/3rdparty)
 include_directories(${PROJECT_SOURCE_DIR}/Component)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 
+# QsLog
+include_directories(${PROJECT_SOURCE_DIR}/3rdparty/QsLog/include)
 
 # ----------------------------------------------------------------
 # Add source modules
@@ -125,6 +127,11 @@ endif()
 target_link_libraries(${PROJECT_NAME} PRIVATE ComApi)
 target_link_libraries(${PROJECT_NAME} PRIVATE Component)
 
+
+link_libraries(${PROJECT_SOURCE_DIR}/3rdparty/QsLog/bin)
+# QsLog lib
+# target_link_libraries(${PROJECT_NAME} PRIVATE
+# message(${PROJECT_SOURCE_DIR}/3rdparty/QsLog/bin/QsLog2.dll)
 
 
 

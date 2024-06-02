@@ -1,5 +1,6 @@
 #include "CommunicationView.h"
 
+#include <QDateTime>
 #include <QTextEdit>
 #include <iostream>
 
@@ -12,12 +13,7 @@ CommunicationView::CommunicationView(QWidget *parent)
 
     this->setStyleSheet("QListWidget::item:hover { background-color: none; }");
     this->setStyleSheet("border: none;");
-
-    // BubbleItem *q = createChatRecord(std::string("测试奇偶"), MsgSender::Client, MsgType::Text, this);
-    // insertChatRecord(q);
-
-    // BubbleItem *q1 = createChatRecord(std::string("使得撒\n\n\n\n\n\n\n旦撒旦萨东盛科技"), MsgSender::Client, MsgType::Text, this);
-    // insertChatRecord(q1);
+    this->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 }
 
@@ -26,16 +22,31 @@ BubbleItem *CommunicationView::createChatRecord(std::string msg, MsgSender sende
     return new BubbleItem(msg, sender, type, parent);
 }
 
-void CommunicationView::insertChatRecord(BubbleItem *i)
+void CommunicationView::insertChatRecord(BubbleItem *item)
 {
-    QListWidgetItem *item = new QListWidgetItem("");
-    item->setSizeHint(i->sizeHint());
-    this->addItem(item);
-    this->setItemWidget(item, i);
+    QListWidgetItem *newItem = new QListWidgetItem("");
+    newItem->setSizeHint(item->sizeHint());
+    this->addItem(newItem);
+    this->setItemWidget(newItem, item);
 }
 
-void CommunicationView::receiveMsg(QString msg)
+BubbleItem *CommunicationView::createTimeStamp(const QDateTime &time, QWidget *parent)
 {
-    BubbleItem *item = createChatRecord(std::string(msg.toStdString()), MsgSender::Client, MsgType::Text, this);
-    insertChatRecord(item);
+    return new BubbleItem(time, parent);
+}
+
+void CommunicationView::insertTimeStamp(BubbleItem *item)
+{
+    QListWidgetItem *newItem = new QListWidgetItem("");
+    newItem->setSizeHint(item->sizeHint());
+    this->addItem(newItem);
+    this->setItemWidget(newItem, item);
+}
+
+void CommunicationView::receiveMsg(QString msg, const QDateTime &time)
+{
+    insertTimeStamp(createTimeStamp(time, this));
+
+    insertChatRecord(createChatRecord(std::string(msg.toStdString()), MsgSender::Client, MsgType::Text, this));
+
 }

@@ -1,6 +1,7 @@
 #include "MainMsgBox.h"
 
 #include <QFile>
+#include <QMenu>
 
 MainMsgBox::MainMsgBox(QWidget *parent)
     : QWidget{parent}
@@ -102,6 +103,19 @@ void MainMsgBox::init() {
     m_btnGroup->addButton(m_storeBtn);
     m_btnGroup->addButton(m_usrBtn);
 
+    QMenu* menu = new QMenu(m_settingBtn);
+    QAction* callBack = menu->addAction(tr("意见反馈"));
+    QAction* settings = menu->addAction(tr("设置"));
+
+    QObject::connect(m_settingBtn, &QPushButton::clicked, [=]() {
+        QPoint pos = m_settingBtn->mapToGlobal(QPoint(m_settingBtn->width(), -15));
+        QAction *trig = menu->exec(pos);
+        if (trig == callBack) {
+
+        } else if (trig == settings) {
+
+        }
+    });
 
 }
 

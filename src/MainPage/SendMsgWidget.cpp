@@ -1,5 +1,6 @@
 #include "SendMsgWidget.h"
 
+#include <QDateTime>
 #include <QFile>
 
 SendMsgWidget::SendMsgWidget(QWidget *parent)
@@ -114,7 +115,7 @@ void SendMsgWidget::sendMsg()
 {
     if (!m_textEdit->toPlainText().isEmpty()) {
         // emit
-        emit sigSendMsg(m_textEdit->toPlainText());
+        emit sigSendMsg(m_textEdit->toPlainText(), QDateTime::currentDateTime());
         m_textEdit->clear();
     } else {
 

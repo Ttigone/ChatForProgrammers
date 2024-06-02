@@ -22,7 +22,7 @@ public slots:
     void sendMsg();
 
 signals:
-    void sigSendMsg(QString msg);
+    void sigSendMsg(QString msg, const QDateTime &time);
 
 private:
     QVBoxLayout *m_baseLayout;
@@ -50,6 +50,9 @@ private:
     QWidget *m_sendBtnWidget;
     QHBoxLayout *m_sendBtnLayout;
     QPushButton *m_sendBtn;
+
+    // 发送时间
+    QDateTime *sendMsgTime;
 };
 
 #endif // SENDMSGWIDGET_H

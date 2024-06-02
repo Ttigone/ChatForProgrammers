@@ -10,7 +10,7 @@
 #include <QSplitter>
 #include <QStackedLayout>
 
-#include "qt-easy-logger-main/logger.h"
+// #include "qt-easy-logger-main/logger.h"
 
 #include "App.h"
 #include "Sys/SysConfig.h"
@@ -20,7 +20,7 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent) {
 
-    qInstallMessageHandler(h::Logger::messageHandler);  // 启用功能
+    // qInstallMessageHandler(h::Logger::messageHandler);  // 启用功能
 
     m_layout = new QVBoxLayout;
     installWindowAgent();
@@ -159,10 +159,6 @@ void Widget::installWindowAgent() {
         // auto file = new QMenu(tr("File(&F)"), menuBar);
         // file->addAction(new QAction(tr("New(&N)"), menuBar));
         // file->addSeparator();
-
-        // auto edit = new QMenu(tr("Edit(&E)"), menuBar);
-        // edit->addAction(new QAction(tr("Undo(&U)"), menuBar));
-        // edit->addAction(new QAction(tr("Redo(&R)"), menuBar));
 
 
         // menuBar->addMenu(file);

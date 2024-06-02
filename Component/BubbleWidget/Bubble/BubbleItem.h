@@ -17,6 +17,7 @@ public:
     BubbleItem(QWidget *parent = nullptr);
     BubbleItem(const BubbleInfo *info, QWidget *parent);
     BubbleItem(std::string msg, MsgSender sender, MsgType type, QWidget *parent);
+    BubbleItem(const QDateTime &time, QWidget *parent);
 
 private:
     QBoxLayout *m_layout;

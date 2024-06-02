@@ -48,7 +48,11 @@ void MainMsgWidget::init(const CellData &data)
     m_layout->addWidget(m_labelWidget);
     m_layout->addWidget(splitter2);
 
-    connect(m_sendMsgWidget, &SendMsgWidget::sigSendMsg, m_communicationList, &CommunicationView::receiveMsg);
+    // connect(m_sendMsgWidget, &SendMsgWidget::sigSendMsg, m_communicationList, &CommunicationView::receiveMsg);
+    connect(m_sendMsgWidget, &SendMsgWidget::sigSendMsg, [this](QString msg, const QDateTime &time) {
+        m_communicationList->receiveMsg(msg, time);
+        emit updateTimeStamp(time);
+    });
 
 }
 

@@ -23,6 +23,9 @@ public:
 private:
     void init(const CellData &data);
 
+signals:
+    void updateTimeStamp(const QDateTime &time);
+
 private:
     QBoxLayout *m_layout;
 

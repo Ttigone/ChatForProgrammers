@@ -3,6 +3,7 @@
 #include "Sys/CellData.h"
 #include "Sys/SysConfig.h"
 
+#include <QDateTime>
 #include <QStandardItem>
 #include <QVariant>
 
@@ -12,26 +13,14 @@ MainChatModel::MainChatModel(QObject *parent)
     : QAbstractListModel{parent}
 {
     m_userMap = SysConfig::instance().getUserLabelMap();
-    // m_userMap = new std::map<int64_t, LabelData>;
-    // 插入数据
-    // for (int i = 0; i < 2; ++i) {
-    //     // LabelData data;
-    //     // data.m_iconPath =
-    //     m_userMap.insert(std::pair(i, CellData(i, icons[i], names[i], earilyMsgs[i], times[i])));
-    // }
-
     init();
 }
 
 MainChatModel::~MainChatModel() {}
 
 void MainChatModel::init() {
-    // for (int i = 0; i < m_userMap.size(); ++i) {
-    // for (int i = 0; i < SysConfig::getUserLabelMap().size(); ++i) {
     for (int i = 0; i < m_userMap.size(); ++i) {
         this->insertRow(i, QModelIndex());
-        // this->setData(this->index(i), QVariant::fromValue(SysConfig::getUserLabelMap()[i]), Qt::UserRole);
-        // this->setData(this->index(i), QVariant::fromValue(map.getUserLabelMap()[i]), Qt::UserRole);
         this->setData(this->index(i), QVariant::fromValue(m_userMap[i]), Qt::UserRole);
     }
 }
@@ -51,10 +40,18 @@ QVariant MainChatModel::data(const QModelIndex &index, int role) const {
         data.m_iconPath = icons.at(index.row());
         data.m_name = names.at(index.row());
         data.m_earilyMsg = earilyMsgs.at(index.row());
-        data.m_time = times.at(index.row());
+
+        data.m_time = m_userMap.at(index.row()).m_time;
         return QVariant::fromValue(data);
     } else {
         return QVariant();
     }
     return QVariant();
+}
+
+void MainChatModel::updateModel(const QModelIndex &index, const QDateTime &time)
+{
+    m_userMap[index.row()].m_time = time.toLocalTime().toString("hh:mm");
+    this->setData(index, QVariant::fromValue(m_userMap.at(index.row())), Qt::UserRole);
+    emit dataChanged(index, index, {Qt::UserRole});
 }

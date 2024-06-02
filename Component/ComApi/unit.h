@@ -4,7 +4,8 @@
 typedef enum {
     Text,                           // 文本消息
     Picture,                        // 图片消息
-    File                            // 文件消息
+    File,                           // 文件消息
+    TimeStamp                       // 时间戳
 } MsgType;
 
 typedef enum {
@@ -19,4 +20,6 @@ typedef enum {
     AloneChat,                      // 独聊
     GroupChat                       // 群聊
 } UserType;
+
+
 #endif // UNIT_H

@@ -49,7 +49,7 @@ void LabelDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         QRectF iconRect = QRectF(rect.x() + 6, rect.y() + 11, 35, 35);
         QRectF nameRect = QRectF(iconRect.right() + 3, iconRect.top() - 3, rect.width() - 36, 20);
         QRectF msgRect = QRectF(nameRect.x(), nameRect.bottom() + 3, nameRect.width() - 36, 20);
-        QRectF timeRect = QRectF(rect.width() - 30, iconRect.top(), 30,20);
+        QRectF timeRect = QRectF(rect.width() - 40, iconRect.top(), 40,20);
 
         // 绘制图片
         painter->drawImage(iconRect, QImage(data.m_iconPath));
@@ -66,7 +66,7 @@ void LabelDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         painter->drawText(msgRect, data.m_earilyMsg);
 
         // 绘制时间
-        painter->setPen(QPen(Qt::red));
+        painter->setPen(QPen(Qt::gray));
         painter->drawText(timeRect, data.m_time);
 
         painter->restore();
@@ -85,19 +85,6 @@ MainChatList::MainChatList(QWidget *parent)
 {
     init();
 
-    // connect(this, &QListView::clicked, [this](const QModelIndex& index) {
-    //     // 获取点击项的索引
-    //     if (index.isValid()) {
-    //         if (index != currentIndex()) {
-    //             // 切换
-    //             CellData q = qvariant_cast<CellData>(this->model()->data(index, Qt::UserRole));
-    //             emit chatChanged(q.m_id);
-    //         } else {
-
-    //         }
-    //     }
-    // });
-
 }
 
 MainChatList::~MainChatList() {
@@ -108,5 +95,7 @@ void MainChatList::init() {
     this->setItemDelegate(m_labelDelegate);
     m_labelModel = new MainChatModel;
     this->setModel(m_labelModel);
+
+    // connect(m_labelModel, &MainChatModel::dataChanged, this, &QListView::update);
 
 }
